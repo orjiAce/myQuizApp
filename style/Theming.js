@@ -1,6 +1,7 @@
 import Colors from "./Colors";
 import { StyleSheet } from "react-native";
 
+
 const Styles = StyleSheet.create({
   SplashScreen: {
     flex: 1,
@@ -34,7 +35,6 @@ const Styles = StyleSheet.create({
   customButtonStyle: {
     backgroundColor: Colors.black,
     width: 150,
-    borderRadius: 26,
     padding: 12,
     borderRadius: 30,
     textAlign: "center",
@@ -82,12 +82,29 @@ textAlign:"left",
     borderRadius:100,
     margin: 5,
   },
+  cardText:{
+    textAlign: "center",
+    fontFamily: "Montserrat-Bold",
+    fontSize: 24,
+    color:"white"
+  },
   navItem: {
     width: 150,
     height: 40,
     alignItems: "center",
     padding: 10,
   },
+
+  //quiz page
+  QuizPage:{
+    flex: 1,
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  quizPageText:{
+    color: Colors.black,
+    fontSize: 28,
+  }
 });
 
 export default Styles;

@@ -5,7 +5,7 @@ import Splash from './Components/Splash';
 import Colors from './style/Colors';
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
-import Category from './Components/Category';
+import Category from './Components/pages/Category';
 
 const fetchFont = () =>{
  return Font.loadAsync({
