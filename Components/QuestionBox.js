@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import {Button, View} from 'react-native'
+import {Button, Text, TouchableOpacity, View} from 'react-native'
+import Styles from "../style/Theming";
 
-
+let i = 1;
 // Function to question inside our app
 const QuestionBox = ({question, options, selected}) => {
-    const [answer, setAnswer] = useState(options);
+    const [answers, setAnswer] = useState(options);
     const [choice, setChoice] = useState('');
 
     const resetAnswer = (answers) => {
@@ -12,22 +13,26 @@ const QuestionBox = ({question, options, selected}) => {
     }
 
     return (
-        <View style="questionBox">
-        {/*    <View className="question">{question}</View>*/}
-            {answer.map((text, index) => (
-                {text}
-               /* <button
-                    key={index}
-                    className={`answerBtn ${answer.filter(ans => (ans.includes(text) ? 'active' : ''))}`}
-                    onClick={() => {
-                        setAnswer([text]);
-                        setChoice(text)
-                        //console.log(text)
-                        selected(text);
-                    }}> {text}
-                </button>*/
-            ))}
-        </View>
+
+    <View style={Styles.answersWrap}>
+        {
+            answers.map((text, index) =>(
+                <TouchableOpacity key={index}  onPress={() => {
+                    setAnswer([text]);
+                    setChoice(text)
+                    //console.log(text)
+                    selected(text);
+                }} style={Styles.answerBtn}>
+
+                    <Text style={Styles.answerText}>
+
+                        {text}
+                    </Text>
+                </TouchableOpacity>
+            ))
+        }
+
+    </View>
     )
 };
 
